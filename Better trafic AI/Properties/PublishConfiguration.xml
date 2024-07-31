@@ -1,0 +1,55 @@
+﻿<Publish>
+	<!--Id must be set in order to update existed mod. it is not required for publishing mod for the first time-->
+	<ModId Value="" />
+	<!--Name of the mod to display to players-->
+	<DisplayName Value="Pathfinding Customizer" />
+	<!--Short description of the mod-->
+	<ShortDescription Value="Pathfinding Customizer lets you fine-tune the pathfinding system by adjusting the cost associated with specific actions. Increase or decrease the cost to change the probability of behaviors such as pedestrians jaywalking or vehicles making unsafe U-turns. Tailor these settings to create a more realistic or challenging urban environment based on your preferences." />
+	<!--Long description of the mod. Single line or multi line. Supports minimal markdown subset-->
+	<!--LongDescription Value="This is a long description" /-->
+	<LongDescription>
+		**Pathfinding Customizer** is a powerful tool for tailoring your city's navigation system to better fit your desired gameplay experience. This mod allows you to adjust the probabilities of specific pathfinding actions by modifying their associated costs.
+
+		With **Pathfinding Customizer**, you can:
+
+		- **Fine-Tune Behavior:** Increase or decrease the cost of specific actions, such as pedestrian jaywalking or vehicles performing unsafe U-turns. Adjusting these costs alters the likelihood of these behaviors occurring, allowing you to fine-tune the balance between realism and challenge in your urban environment.
+
+		- **Create a Customized Experience:** Whether you want to make certain actions more likely or less frequent, this mod gives you precise control over how pedestrians and vehicles navigate your city. Tailor the navigation system to match your vision for the city, whether it's to increase realism or to introduce more strategic challenges.
+
+		- **Adjust Probabilities Dynamically:** Easily modify the cost values to see real-time changes in behavior. Experiment with different settings to find the perfect balance for your city's needs.
+
+		- **Enhance Urban Dynamics:** Improve traffic management and pedestrian safety by adjusting how often risky behaviors occur. Optimize your city's functionality and ensure that it aligns with your gameplay goals.
+
+		**Pathfinding Customizer** provides a versatile and intuitive way to influence how your city's inhabitants behave, giving you the tools to shape a more engaging and well-balanced urban experience.
+	</LongDescription>
+
+	<!--Thumbnail-->
+	<Thumbnail Value="Properties/Thumbnail.png" />
+	<!--Screenshot, can be set multiple times-->
+	<Screenshot Value="" />
+	<!--Tag, can be set multiple times-->
+	<Tag Value="" />
+	<!--Link to the forum post where the mod can be discussed-->
+	<ForumLink Value="" />
+	<!--Version of the mod-->
+	<ModVersion Value="1.0.0" />
+	<!--Recommended version of the base game to use the mod-->
+	<GameVersion Value="1.0.*" />
+	<!--Dependency for the mod, can be set multiple times-->
+	<Dependency Id="" />
+	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
+	<ChangeLog Value="
+    **Version 1.0.0 (Initial Release) - [31-7-2024]**
+    - **Initial Release:** Launch of **Pathfinding Customizer**, a mod designed to enhance your city's navigation system.
+    - **Feature: Cost Adjustment:** Added the ability to adjust the cost of specific pathfinding actions, such as pedestrian jaywalking and unsafe vehicle U-turns.
+    - **Feature: Dynamic Probability Modification:** Users can increase or decrease action costs to influence the probability of certain behaviors occurring in the city.
+    - **Feature: Real-Time Updates:** Changes to cost values are applied immediately, allowing for dynamic adjustments and experimentation.
+    - **Feature: Customization Options:** Provides a range of settings to fine-tune both pedestrian and vehicle navigation to match your gameplay preferences.
+    - **User Interface:** Introduced an intuitive interface for easy adjustment of pathfinding costs and settings.
+    " />
+	<!--ChangeLog>
+    </ChangeLog-->
+
+	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon, buymeacoffee, kofi, crowdin, gitlab-->
+	<ExternalLink Type="" Url="" />
+</Publish>
