@@ -1,50 +1,36 @@
 ﻿<Publish>
 	<!--Id must be set in order to update existed mod. it is not required for publishing mod for the first time-->
-	<ModId Value="" />
+	<ModId Value="86462" />
 	<!--Name of the mod to display to players-->
 	<DisplayName Value="Pathfinding Customizer" />
 	<!--Short description of the mod-->
-	<ShortDescription Value="Pathfinding Customizer lets you fine-tune the pathfinding system by adjusting the cost associated with specific actions. Increase or decrease the cost to change the probability of behaviors such as pedestrians jaywalking or vehicles making unsafe U-turns. Tailor these settings to create a more realistic or challenging urban environment based on your preferences." />
+	<ShortDescription Value="Fine-tune pathfinding by adjusting the cost of actions. Increase or decrease costs to modify the likelihood of behaviors like jaywalking or unsafe U-turns." />
 	<!--Long description of the mod. Single line or multi line. Supports minimal markdown subset-->
 	<!--LongDescription Value="This is a long description" /-->
-	<LongDescription>
-		**Pathfinding Customizer** is a powerful tool for tailoring your city's navigation system to better fit your desired gameplay experience. This mod allows you to adjust the probabilities of specific pathfinding actions by modifying their associated costs.
+	<LongDescription># Pathfinding Customizer
+		
+**Pathfinding Customizer** is a powerful tool for tailoring your city's navigation system to better fit your desired gameplay experience. This mod allows you to adjust the probabilities of specific pathfinding actions by modifying their associated costs.
 
-		With **Pathfinding Customizer**, you can:
+With **Pathfinding Customizer**, you can:
 
-		- **Fine-Tune Behavior:** Increase or decrease the cost of specific actions, such as pedestrian jaywalking or vehicles performing unsafe U-turns. Adjusting these costs alters the likelihood of these behaviors occurring, allowing you to fine-tune the balance between realism and challenge in your urban environment.
+- Fine-Tune Behavior: Increase or decrease the cost of specific actions, such as pedestrian jaywalking or vehicles performing unsafe U-turns. Adjusting these costs alters the likelihood of these behaviors occurring, allowing you to fine-tune the balance between realism and challenge in your urban environment.
 
-		- **Create a Customized Experience:** Whether you want to make certain actions more likely or less frequent, this mod gives you precise control over how pedestrians and vehicles navigate your city. Tailor the navigation system to match your vision for the city, whether it's to increase realism or to introduce more strategic challenges.
+- Create a Customized Experience: Whether you want to make certain actions more likely or less frequent, this mod gives you precise control over how pedestrians and vehicles navigate your city. Tailor the navigation system to match your vision for the city, whether it's to increase realism or to introduce more strategic challenges.
 
-		- **Adjust Probabilities Dynamically:** Easily modify the cost values to see real-time changes in behavior. Experiment with different settings to find the perfect balance for your city's needs.
+- **Adjust Probabilities Dynamically:** Easily modify the cost values to see real-time changes in behavior. Experiment with different settings to find the perfect balance for your city's needs.
 
-		- **Enhance Urban Dynamics:** Improve traffic management and pedestrian safety by adjusting how often risky behaviors occur. Optimize your city's functionality and ensure that it aligns with your gameplay goals.
+- **Enhance Urban Dynamics:** Improve traffic management and pedestrian safety by adjusting how often risky behaviors occur. Optimize your city's functionality and ensure that it aligns with your gameplay goals.
 
-		**Pathfinding Customizer** provides a versatile and intuitive way to influence how your city's inhabitants behave, giving you the tools to shape a more engaging and well-balanced urban experience.
+**Pathfinding Customizer** provides a versatile and intuitive way to influence how your city's inhabitants behave, giving you the tools to shape a more engaging and well-balanced urban experience.
 	</LongDescription>
 
 	<!--Thumbnail-->
 	<Thumbnail Value="Properties/Thumbnail.png" />
 	<!--Screenshot, can be set multiple times-->
-<!--	<Screenshot Value="" />-->
+	<Screenshot Value="" />
 	<!--Tag, can be set multiple times-->
-	<Tag Value="Pathfinding" />
-	<Tag Value="Customization" />
-	<Tag Value="AI" />
-	<Tag Value="Traffic" />
-	<Tag Value="Simulation" />
-	<Tag Value="Modding" />
-	<Tag Value="Behavior" />
-	<Tag Value="Settings" />
-	<Tag Value="Gameplay" />
-	<Tag Value="Optimization" />
-	<Tag Value="Realism" />
-	<Tag Value="Pedestrian" />
-	<Tag Value="Vehicles" />
-	<Tag Value="Adjustments" />
-	<Tag Value="Dynamics" />
-	<Tag Value="Performance" />
-	<Tag Value="User Interface" />
+	<Tag Value="Code Mod" />
+		
 	<!--Link to the forum post where the mod can be discussed-->
 	<ForumLink Value="" />
 	<!--Version of the mod-->
