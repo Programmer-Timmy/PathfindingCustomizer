@@ -6,9 +6,9 @@ using Game.Settings;
 using Game.UI;
 using System.Collections.Generic;
 
-namespace Better_trafic_AI
+namespace PathfindingCustomizer
 {
-    [FileLocation(nameof(Better_trafic_AI))]
+    [FileLocation(nameof(PathfindingCustomizer))]
     [SettingsUIGroupOrder(kVehicleSettings, kPedestrianSettings)]
     [SettingsUIShowGroupName(kVehicleSettings, kPedestrianSettings)]
     public class Setting : ModSetting
@@ -61,7 +61,7 @@ namespace Better_trafic_AI
             ForbiddenSlider = 100;
             
             // Pedestrian settings
-            UnsafeCrossingSlider = 100;
+            UnsafeCrossingSlider = 250;
         }
     }
 
@@ -81,7 +81,7 @@ namespace Better_trafic_AI
             return new Dictionary<string, string>
             {
                 // Main
-                { m_Setting.GetSettingsLocaleID(), "Better Traffic AI" },
+                { m_Setting.GetSettingsLocaleID(), "Pathfinding Customizer" },
                 { m_Setting.GetOptionTabLocaleID(Setting.kSection), "Main" },
 
                 // Groups

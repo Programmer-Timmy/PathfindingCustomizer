@@ -1,9 +1,9 @@
-﻿using Better_trafic_AI;
+﻿using PathfindingCustomizer;
 using Colossal.Logging;
 using Game.Pathfind;
 using Game.Prefabs;
 
-namespace Better_trafic_AI
+namespace PathfindingCustomizer
 {
     public partial class PedestrianPathFindSystem : PathFindSystemBase<PathfindPedestrianData>
     {

@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Better trafic AI", "Better trafic AI\Better trafic AI.csproj", "{8BF6AA3F-8C81-4819-881F-0A3CDEFD5CEF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathfindingCustomizer", "PathfindingCustomizer\PathfindingCustomizer.csproj", "{8BF6AA3F-8C81-4819-881F-0A3CDEFD5CEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

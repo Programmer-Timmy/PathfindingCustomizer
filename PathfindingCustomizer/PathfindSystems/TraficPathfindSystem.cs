@@ -6,7 +6,7 @@ using Game.Pathfind;
 using Game.Prefabs;
 using Unity.Entities;
 
-namespace Better_trafic_AI
+namespace PathfindingCustomizer
 {
     public partial class TraficPathfindSystem : PathFindSystemBase<PathfindCarData>
     {

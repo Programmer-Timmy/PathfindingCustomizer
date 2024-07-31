@@ -8,12 +8,12 @@ using Game.Pathfind;
 using Unity.Collections;
 using Unity.Entities;
 
-namespace Better_trafic_AI
+namespace PathfindingCustomizer
 {
     
     public partial class PathFindSystemBase<T> : GameSystemBase where T : unmanaged, IComponentData // Yess it is unmanaged... I know what I'm doing :) Unity is just annoying
 {
-    private readonly ILog _logger = LogManager.GetLogger($"{nameof(Better_trafic_AI)}.{nameof(PathFindSystemBase<T>)}");
+    private readonly ILog _logger = LogManager.GetLogger($"{nameof(PathfindingCustomizer)}.{nameof(PathFindSystemBase<T>)}");
     
     protected override void OnUpdate()
     {

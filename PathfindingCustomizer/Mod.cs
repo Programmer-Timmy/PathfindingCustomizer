@@ -6,11 +6,11 @@ using Colossal.IO.AssetDatabase;
 using Game.Prefabs;
 using Game.UI.InGame;
 
-namespace Better_trafic_AI
+namespace PathfindingCustomizer
 {
     public class Mod : IMod
     { 
-        private static ILog _log = LogManager.GetLogger($"{nameof(Better_trafic_AI)}.{nameof(Mod)}")
+        private static ILog _log = LogManager.GetLogger($"{nameof(PathfindingCustomizer)}.{nameof(Mod)}")
             .SetShowsErrorsInUI(false);
 
         public static Setting M_Setting;
@@ -28,7 +28,7 @@ namespace Better_trafic_AI
             GameManager.instance.localizationManager.AddSource("en-US", new LocaleEN(M_Setting));
             
             // Load saved settings.
-            AssetDatabase.global.LoadSettings(nameof(Better_trafic_AI), M_Setting, new Setting(this));
+            AssetDatabase.global.LoadSettings(nameof(PathfindingCustomizer), M_Setting, new Setting(this));
             
             updateSystem.UpdateAfter<TraficPathfindSystem>(SystemUpdatePhase.LoadSimulation);
             updateSystem.UpdateAfter<PedestrianPathFindSystem>(SystemUpdatePhase.LoadSimulation);

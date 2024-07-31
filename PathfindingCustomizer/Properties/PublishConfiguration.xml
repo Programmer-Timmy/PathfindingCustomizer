@@ -26,9 +26,25 @@
 	<!--Thumbnail-->
 	<Thumbnail Value="Properties/Thumbnail.png" />
 	<!--Screenshot, can be set multiple times-->
-	<Screenshot Value="" />
+<!--	<Screenshot Value="" />-->
 	<!--Tag, can be set multiple times-->
-	<Tag Value="" />
+	<Tag Value="Pathfinding" />
+	<Tag Value="Customization" />
+	<Tag Value="AI" />
+	<Tag Value="Traffic" />
+	<Tag Value="Simulation" />
+	<Tag Value="Modding" />
+	<Tag Value="Behavior" />
+	<Tag Value="Settings" />
+	<Tag Value="Gameplay" />
+	<Tag Value="Optimization" />
+	<Tag Value="Realism" />
+	<Tag Value="Pedestrian" />
+	<Tag Value="Vehicles" />
+	<Tag Value="Adjustments" />
+	<Tag Value="Dynamics" />
+	<Tag Value="Performance" />
+	<Tag Value="User Interface" />
 	<!--Link to the forum post where the mod can be discussed-->
 	<ForumLink Value="" />
 	<!--Version of the mod-->
@@ -36,10 +52,11 @@
 	<!--Recommended version of the base game to use the mod-->
 	<GameVersion Value="1.0.*" />
 	<!--Dependency for the mod, can be set multiple times-->
-	<Dependency Id="" />
+<!--	<Dependency Id="" />-->
 	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
-	<ChangeLog Value="
-    **Version 1.0.0 (Initial Release) - [31-7-2024]**
+<!--	<ChangeLog Value="-->
+	<ChangeLog>
+	**Version 1.0.0 (Initial Release) - [31-7-2024]**
     - **Initial Release:** Launch of **Pathfinding Customizer**, a mod designed to enhance your city's navigation system.
     - **Feature: Cost Adjustment:** Added the ability to adjust the cost of specific pathfinding actions, such as pedestrian jaywalking and unsafe vehicle U-turns.
     - **Feature: Dynamic Probability Modification:** Users can increase or decrease action costs to influence the probability of certain behaviors occurring in the city.
@@ -47,9 +64,7 @@
     - **Feature: Customization Options:** Provides a range of settings to fine-tune both pedestrian and vehicle navigation to match your gameplay preferences.
     - **User Interface:** Introduced an intuitive interface for easy adjustment of pathfinding costs and settings.
     " />
-	<!--ChangeLog>
-    </ChangeLog-->
-
+    </ChangeLog>
 	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon, buymeacoffee, kofi, crowdin, gitlab-->
-	<ExternalLink Type="" Url="" />
+	<ExternalLink Type="github" Url="https://github.com/Programmer-Timmy/PathfindingCustomizer" />
 </Publish>
