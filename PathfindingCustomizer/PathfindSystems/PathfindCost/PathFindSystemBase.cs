@@ -8,7 +8,7 @@ using Game.Pathfind;
 using Unity.Collections;
 using Unity.Entities;
 
-namespace PathfindingCustomizer
+namespace PathfindingCustomizer.PathfindSystems.PathfindCost
 {
     
     public partial class PathFindSystemBase<T> : GameSystemBase where T : unmanaged, IComponentData // Yess it is unmanaged... I know what I'm doing :) Unity is just annoying

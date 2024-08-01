@@ -3,8 +3,8 @@ using Game;
 using Game.Modding;
 using Game.SceneFlow;
 using Colossal.IO.AssetDatabase;
-using Game.Prefabs;
-using Game.UI.InGame;
+using PathfindingCustomizer.PathfindSystems;
+using PathfindingCustomizer.PathfindSystems.PathfindCost;
 
 namespace PathfindingCustomizer
 {
@@ -32,9 +32,12 @@ namespace PathfindingCustomizer
             
             updateSystem.UpdateAfter<TraficPathfindSystem>(SystemUpdatePhase.LoadSimulation);
             updateSystem.UpdateAfter<PedestrianPathFindSystem>(SystemUpdatePhase.LoadSimulation);
+            updateSystem.UpdateAfter<TrackPathFindSystem>(SystemUpdatePhase.LoadSimulation);
+            updateSystem.UpdateAfter<TransportPathFindSystem>(SystemUpdatePhase.LoadSimulation);
+            updateSystem.UpdateAfter<ConnectionPathFindSystem>(SystemUpdatePhase.LoadSimulation);
             
             // log that the mod has been loaded
-            _log.Info("Traffic AI mod has been loaded");
+            _log.Info("Pathfinding customizer mod has been loaded");
         }
 
         public void OnDispose()

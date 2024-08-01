@@ -34,7 +34,7 @@ With **Pathfinding Customizer**, you can:
 	<!--Link to the forum post where the mod can be discussed-->
 	<ForumLink Value="" />
 	<!--Version of the mod-->
-	<ModVersion Value="1.0.0" />
+	<ModVersion Value="1.0.1" />
 	<!--Recommended version of the base game to use the mod-->
 	<GameVersion Value="1.0.*" />
 	<!--Dependency for the mod, can be set multiple times-->
@@ -42,14 +42,9 @@ With **Pathfinding Customizer**, you can:
 	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
 <!--	<ChangeLog Value="-->
 	<ChangeLog>
-	**Version 1.0.0 (Initial Release) - [31-7-2024]**
-    - **Initial Release:** Launch of **Pathfinding Customizer**, a mod designed to enhance your city's navigation system.
-    - **Feature: Cost Adjustment:** Added the ability to adjust the cost of specific pathfinding actions, such as pedestrian jaywalking and unsafe vehicle U-turns.
-    - **Feature: Dynamic Probability Modification:** Users can increase or decrease action costs to influence the probability of certain behaviors occurring in the city.
-    - **Feature: Real-Time Updates:** Changes to cost values are applied immediately, allowing for dynamic adjustments and experimentation.
-    - **Feature: Customization Options:** Provides a range of settings to fine-tune both pedestrian and vehicle navigation to match your gameplay preferences.
-    - **User Interface:** Introduced an intuitive interface for easy adjustment of pathfinding costs and settings.
-    " />
+		
+- Added more options for adjusting pathfinding costs for pedestrians and vehicles. 
+		
     </ChangeLog>
 	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon, buymeacoffee, kofi, crowdin, gitlab-->
 	<ExternalLink Type="github" Url="https://github.com/Programmer-Timmy/PathfindingCustomizer" />
