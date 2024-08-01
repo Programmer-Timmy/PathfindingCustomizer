@@ -11,6 +11,9 @@
 
 ## Changelog
 
+- **Version 1.0.1 - [1-8-2024]**
+    - **Added:** more options for adjusting pathfinding costs for pedestrians and vehicles.
+
 - **Version 1.0.0 (Initial Release) - [31-7-2024]**
     - **Initial Release:** Launch of **Pathfinding Customizer**.
     - **Feature: Cost Adjustment:** Added the ability to adjust the cost of specific pathfinding actions.
