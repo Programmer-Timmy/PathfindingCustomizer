@@ -3,9 +3,9 @@ using Game.Prefabs;
 
 namespace PathfindingCustomizer.PathfindSystems.PathfindCost
 {
-    public partial class TrackPathFindSystem : PathFindSystemBase<PathfindConnectionData>
+    public partial class TrackPathFindSystem : PathFindSystemBase<PathfindTrackData>
     {
-        protected override PathfindConnectionData AdjustPathfindingData(PathfindConnectionData data, Setting settings)
+        protected override PathfindTrackData AdjustPathfindingData(PathfindTrackData data, Setting settings)
         {
             return data;
         }

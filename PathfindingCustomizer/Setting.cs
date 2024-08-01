@@ -24,7 +24,7 @@ namespace PathfindingCustomizer
             if (UnsafeTurningSlider == 0) UnsafeTurningSlider = 100;
             if (UnsafeUTurnSlider == 0) UnsafeUTurnSlider = 100;
             if (ForbiddenSlider == 0) ForbiddenSlider = 100;
-            if (UnsafeCrossingSlider == 0) UnsafeCrossingSlider = 250;
+            if (UnsafeCrossingSlider == 0) UnsafeCrossingSlider = 150;
             if (CrossingSlider == 0) CrossingSlider = 100;
             if (SpawnSlider == 0) SpawnSlider = 100;
             if (WalkingSlider == 0) WalkingSlider = 100;
@@ -114,9 +114,18 @@ namespace PathfindingCustomizer
             UnsafeTurningSlider = 100;
             UnsafeUTurnSlider = 100;
             ForbiddenSlider = 100;
+            DrivingSlider = 100;
+            ParkingSlider = 100;
+            TurningSlider = 100;
+            LaneCrossingSlider = 100;
+            TraficSpawnSlider = 100;
+            
             
             // Pedestrian settings
-            UnsafeCrossingSlider = 250;
+            UnsafeCrossingSlider = 150;
+            CrossingSlider = 100;
+            SpawnSlider = 100;
+            WalkingSlider = 100;
         }
     }
 
