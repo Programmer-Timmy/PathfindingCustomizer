@@ -22,6 +22,10 @@
     - **Feature: Customization Options:** Fine-tune pedestrian and vehicle navigation.
     - **User Interface:** Introduced an intuitive interface for easy adjustments.
 
+## Upcomming
+- addding a advanced mod that allows you to make specific changes to the cots
+- Looking into how the pathfinding works to create features like yielding for emergency vehicles
+
 ## Contributing
 
 Contributions are welcome! If you have any ideas, bug reports, or improvements, please feel free to open an issue or submit a pull request. For more information on contributing, please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) file.
