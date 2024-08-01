@@ -10,6 +10,9 @@
 - **User-Friendly Interface:** Easy-to-use controls for adjusting pathfinding costs and settings.
 
 ## Changelog
+- **Version 1.0.4 - [1-8-2024]**
+    - **fixed** No pop growth. If you have this issue set unsafe crossing to 150 or lower
+
 - **Version 1.0.2 - [1-8-2024]**
     - **Changed** the default jaywalking multiplier to 250% instead of game default 100%.
 
