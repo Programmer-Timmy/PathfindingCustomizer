@@ -10,7 +10,7 @@
 - **User-Friendly Interface:** Easy-to-use controls for adjusting pathfinding costs and settings.
 
 ## Changelog
-- **Version 1.0.2 - [2-8-2024]**
+- **Version 1.0.2 - [1-8-2024]**
     - **Changed** the default jaywalking multiplier to 250% instead of game default 100%.
 
 - **Version 1.0.1 - [1-8-2024]**
