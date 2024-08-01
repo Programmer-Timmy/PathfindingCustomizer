@@ -1,46 +1,51 @@
-﻿using System;
-using Colossal;
+﻿using Colossal;
 using Colossal.IO.AssetDatabase;
 using Game.Modding;
 using Game.Settings;
 using Game.UI;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace PathfindingCustomizer
 {
     [FileLocation(nameof(PathfindingCustomizer))]
-    [SettingsUIGroupOrder(kVehicleSettings, kPedestrianSettings)]
-    [SettingsUIShowGroupName(kVehicleSettings, kPedestrianSettings)]
+    [SettingsUIGroupOrder(kVehicleSettings, kPedestrianSettings, kDetailsAndSupport)]
+    [SettingsUIShowGroupName(kVehicleSettings, kPedestrianSettings, kDetailsAndSupport)]
     public class Setting : ModSetting
     {
         public const string kSection = "Main";
 
-        public const string kVehicleSettings = "Vehicle settings";
-        public const string kPedestrianSettings = "Pedestrian settings";    
-        
+        // Section names
+        public const string kVehicleSettings = "Vehicle Settings";
+        public const string kPedestrianSettings = "Pedestrian Settings";    
+        public const string kDetailsAndSupport = "Version Details & Support";
+
         public Setting(IMod mod) : base(mod)
         {
-            if (UnsafeTurningSlider == 0) UnsafeTurningSlider = 100;
-            if (UnsafeUTurnSlider == 0) UnsafeUTurnSlider = 100;
-            if (ForbiddenSlider == 0) ForbiddenSlider = 100;
-            if (UnsafeCrossingSlider == 0) UnsafeCrossingSlider = 150;
-            if (CrossingSlider == 0) CrossingSlider = 100;
-            if (SpawnSlider == 0) SpawnSlider = 100;
-            if (WalkingSlider == 0) WalkingSlider = 100;
-            if (DrivingSlider == 0) DrivingSlider = 100;
-            if (ParkingSlider == 0) ParkingSlider = 100;
-            if (TurningSlider == 0) TurningSlider = 100;
-            if (LaneCrossingSlider == 0) LaneCrossingSlider = 100;
-            if (TraficSpawnSlider == 0) TraficSpawnSlider = 100;
+            UnsafeTurningSlider = UnsafeTurningSlider == 0 ? 100 : UnsafeTurningSlider;
+            UnsafeUTurnSlider = UnsafeUTurnSlider == 0 ? 100 : UnsafeUTurnSlider;
+            ForbiddenSlider = ForbiddenSlider == 0 ? 100 : ForbiddenSlider;
+            UnsafeCrossingSlider = UnsafeCrossingSlider == 0 ? 150 : UnsafeCrossingSlider;
+            CrossingSlider = CrossingSlider == 0 ? 100 : CrossingSlider;
+            SpawnSlider = SpawnSlider == 0 ? 100 : SpawnSlider;
+            WalkingSlider = WalkingSlider == 0 ? 100 : WalkingSlider;
+            DrivingSlider = DrivingSlider == 0 ? 100 : DrivingSlider;
+            ParkingSlider = ParkingSlider == 0 ? 100 : ParkingSlider;
+            TurningSlider = TurningSlider == 0 ? 100 : TurningSlider;
+            LaneCrossingSlider = LaneCrossingSlider == 0 ? 100 : LaneCrossingSlider;
+            TraficSpawnSlider = TraficSpawnSlider == 0 ? 100 : TraficSpawnSlider;
         }
-        
+
         // Vehicle settings
         [SettingsUISection(kSection, kVehicleSettings)]
         
-        //imporant note for vehicle settings
-        public string ImportantNote => "NOTE: These settings multiply the default values of all vehicles. The default value is 100%.";
+        // Important note for vehicle settings
+        [SettingsUIMultilineText]
+        public string ImportantNote => string.Empty;
         
+        [SettingsUISection(kSection, kVehicleSettings)]
+        [SettingsUIMultilineText]
+        public string Note => string.Empty;
+
         // Unsafe turning
         [SettingsUISlider(min = 0, max = 500, step = 1, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kSection, kVehicleSettings)]
@@ -56,27 +61,27 @@ namespace PathfindingCustomizer
         [SettingsUISection(kSection, kVehicleSettings)]
         public int ForbiddenSlider { get; set; }
         
-        // driving cost
+        // Driving cost
         [SettingsUISlider(min = 0, max = 500, step = 1, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kSection, kVehicleSettings)]
         public int DrivingSlider { get; set; }
         
-        // parking cost
+        // Parking cost
         [SettingsUISlider(min = 0, max = 500, step = 1, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kSection, kVehicleSettings)]
         public int ParkingSlider { get; set; }
         
-        // turning cost
+        // Turning cost
         [SettingsUISlider(min = 0, max = 500, step = 1, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kSection, kVehicleSettings)]
         public int TurningSlider { get; set; }
         
-        // lane changing cost
+        // Lane changing cost
         [SettingsUISlider(min = 0, max = 500, step = 1, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kSection, kVehicleSettings)]
         public int LaneCrossingSlider { get; set; }
         
-        // spawn cost
+        // Traffic spawn cost
         [SettingsUISlider(min = 0, max = 500, step = 1, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kSection, kVehicleSettings)]
         public int TraficSpawnSlider { get; set; }
@@ -89,24 +94,33 @@ namespace PathfindingCustomizer
         [SettingsUISection(kSection, kPedestrianSettings)]
         public int UnsafeCrossingSlider { get; set; } 
         
-        // crosswalk cost
+        // Crosswalk cost
         [SettingsUISlider(min = 0, max = 500, step = 1, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kSection, kPedestrianSettings)]
         public int CrossingSlider { get; set; }
         
-        // spawn cost
+        // Pedestrian spawn cost
         [SettingsUISlider(min = 0, max = 500, step = 1, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kSection, kPedestrianSettings)]
         public int SpawnSlider { get; set; }
         
-        // walking cost
+        // Walking cost
         [SettingsUISlider(min = 0, max = 500, step = 1, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kSection, kPedestrianSettings)]
         public int WalkingSlider { get; set; }
         
-        // add a text 
-        [SettingsUISection(kSection, kPedestrianSettings)]
-        public string Note => "NOTE: The game needs a restart to apply the changes.";
+        // Version and support
+        [SettingsUISection(kSection, kDetailsAndSupport)]
+        public string Version => "v1.0.4";
+        
+        // Author
+        [SettingsUISection(kSection, kDetailsAndSupport)]
+        public string Author => "Programmer Timmy";
+        
+        // Support information
+        [SettingsUISection(kSection, kDetailsAndSupport)]
+        [SettingsUIMultilineText]
+        public string Support => string.Empty;
         
         public override void SetDefaults()
         {
@@ -120,7 +134,6 @@ namespace PathfindingCustomizer
             LaneCrossingSlider = 100;
             TraficSpawnSlider = 100;
             
-            
             // Pedestrian settings
             UnsafeCrossingSlider = 150;
             CrossingSlider = 100;
@@ -132,15 +145,13 @@ namespace PathfindingCustomizer
     public class LocaleEN : IDictionarySource
     {
         private readonly Setting m_Setting;
-        
 
         public LocaleEN(Setting setting)
         {
             m_Setting = setting;
         }
 
-        public IEnumerable<KeyValuePair<string, string>> ReadEntries(IList<IDictionaryEntryError> errors,
-            Dictionary<string, int> indexCounts)
+        public IEnumerable<KeyValuePair<string, string>> ReadEntries(IList<IDictionaryEntryError> errors, Dictionary<string, int> indexCounts)
         {
             return new Dictionary<string, string>
             {
@@ -149,178 +160,103 @@ namespace PathfindingCustomizer
                 { m_Setting.GetOptionTabLocaleID(Setting.kSection), "Main" },
 
                 // Groups
-                { m_Setting.GetOptionGroupLocaleID(Setting.kVehicleSettings), "Vehicle settings" },
-                { m_Setting.GetOptionGroupLocaleID(Setting.kPedestrianSettings), "Pedestrian settings" },
+                { m_Setting.GetOptionGroupLocaleID(Setting.kVehicleSettings), "Vehicle Settings" },
+                { m_Setting.GetOptionGroupLocaleID(Setting.kPedestrianSettings), "Pedestrian Settings" },
+                { m_Setting.GetOptionGroupLocaleID(Setting.kDetailsAndSupport), "Version Details & Support" },
 
                 // Labels
                 
-               
-                
                 // Unsafe turning
-                {
-                    m_Setting.GetOptionLabelLocaleID(nameof(Setting.UnsafeTurningSlider)),
-                    "Unsafe turning cost"
-                },
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.UnsafeTurningSlider)), "Unsafe Turning Cost" },
                 
                 // Unsafe U-turn
-                {
-                    m_Setting.GetOptionLabelLocaleID(nameof(Setting.UnsafeUTurnSlider)),
-                    "Unsafe U-turn cost"
-                },
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.UnsafeUTurnSlider)), "Unsafe U-turn Cost" },
                 
                 // Forbidden
-                {
-                    m_Setting.GetOptionLabelLocaleID(nameof(Setting.ForbiddenSlider)),
-                    "Forbidden cost"
-                },
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.ForbiddenSlider)), "Forbidden Cost" },
                 
-                // driving cost
-                {
-                    m_Setting.GetOptionLabelLocaleID(nameof(Setting.DrivingSlider)),
-                    "Driving cost"
-                },
+                // Driving cost
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.DrivingSlider)), "Driving Cost" },
                 
-                // parking cost
-                {
-                    m_Setting.GetOptionLabelLocaleID(nameof(Setting.ParkingSlider)),
-                    "Parking cost"
-                },
+                // Parking cost
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.ParkingSlider)), "Parking Cost" },
                 
-                // turning cost
-                {
-                    m_Setting.GetOptionLabelLocaleID(nameof(Setting.TurningSlider)),
-                    "Turning cost"
-                },
+                // Turning cost
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.TurningSlider)), "Turning Cost" },
                 
-                // lane changing cost
-                {
-                    m_Setting.GetOptionLabelLocaleID(nameof(Setting.LaneCrossingSlider)),
-                    "Lane changing cost"
-                },
+                // Lane changing cost
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.LaneCrossingSlider)), "Lane Changing Cost" },
                 
-                // spawn cost
-                {
-                    m_Setting.GetOptionLabelLocaleID(nameof(Setting.TraficSpawnSlider)),
-                    "Spawn cost"
-                },
+                // Spawn cost
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.TraficSpawnSlider)), "Spawn Cost" },
                 
                 // Unsafe crossing
-                {
-                    m_Setting.GetOptionLabelLocaleID(nameof(Setting.UnsafeCrossingSlider)),
-                    "Unsafe crossing (Jaywalking) cost"
-                },
-                // crosswalk cost
-                {
-                    m_Setting.GetOptionLabelLocaleID(nameof(Setting.CrossingSlider)),
-                    "Crosswalk cost"
-                },
-                // spawn cost
-                {
-                    m_Setting.GetOptionLabelLocaleID(nameof(Setting.SpawnSlider)),
-                    "Spawn cost"
-                },
-                // walking cost
-                {
-                    m_Setting.GetOptionLabelLocaleID(nameof(Setting.WalkingSlider)),
-                    "Walking cost"
-                },
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.UnsafeCrossingSlider)), "Unsafe Crossing Cost" },
+                
+                // Crosswalk cost
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.CrossingSlider)), "Crosswalk Cost" },
+                
+                // Pedestrian spawn cost
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.SpawnSlider)), "Pedestrian Spawn Cost" },
+                
+                // Walking cost
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.WalkingSlider)), "Walking Cost" },
                 
                 // Notes
-                {
-                    m_Setting.GetOptionLabelLocaleID(nameof(Setting.Note)),
-                    "Note:"
-                },
-                {
-                    m_Setting.GetOptionLabelLocaleID(nameof(Setting.ImportantNote)),
-                    "Important Note:"
-                },
-                
-                // Descriptions 
-                // Unsafe turning
-                {
-                    m_Setting.GetOptionDescLocaleID(nameof(Setting.UnsafeTurningSlider)),
-                    "Default is 100%. Increasing this value will make vehicles avoid unsafe turns more frequently. Higher values will lead to more cautious driving behavior, reducing the likelihood of unsafe turns."
-                },
-                
-                // Unsafe U-turn
-                {
-                    m_Setting.GetOptionDescLocaleID(nameof(Setting.UnsafeUTurnSlider)),
-                    "Default is 100%. Increasing this value will make vehicles avoid unsafe U-turns more frequently. Higher values will lead to more cautious behavior, reducing the likelihood of unsafe U-turns."
-                },
-                
-                // Forbidden
-                {
-                    m_Setting.GetOptionDescLocaleID(nameof(Setting.ForbiddenSlider)),
-                    "Default is 100%. Increasing this value will make vehicles avoid forbidden turns more frequently. Higher values will lead to more cautious behavior, reducing the likelihood of forbidden turns."
-                },
-                
-                // driving cost
-                {
-                    m_Setting.GetOptionDescLocaleID(nameof(Setting.DrivingSlider)),
-                    "Default is 100%. Increasing this value will make vehicles avoid driving more frequently. Higher values will lead to more cautious behavior, reducing the likelihood of driving."
-                },
-                // parking cost
-                {
-                    m_Setting.GetOptionDescLocaleID(nameof(Setting.ParkingSlider)),
-                    "Default is 100%. Increasing this value will make vehicles avoid parking more frequently. Higher values will lead to more cautious behavior, reducing the likelihood of parking."
-                },
-                
-                // turning cost
-                {
-                    m_Setting.GetOptionDescLocaleID(nameof(Setting.TurningSlider)),
-                    "Default is 100%. Increasing this value will make vehicles avoid turning more frequently. Higher values will lead to more cautious behavior, reducing the likelihood of turning."
-                },
-                // lane changing cost
-                {
-                    m_Setting.GetOptionDescLocaleID(nameof(Setting.LaneCrossingSlider)),
-                    "Default is 100%. Increasing this value will make vehicles avoid lane changing more frequently. Higher values will lead to more cautious behavior, reducing the likelihood of lane changing."
-                },
-                
-                // spawn cost
-                {
-                    m_Setting.GetOptionDescLocaleID(nameof(Setting.TraficSpawnSlider)),
-                    "Default is 100%. Increasing this value will make vehicles avoid spawning more frequently. Higher values will lead to more cautious behavior, reducing the likelihood of spawning."
-                },
-                
-                // Unsafe crossing
-                {
-                    m_Setting.GetOptionDescLocaleID(nameof(Setting.UnsafeCrossingSlider)),
-                    "Default is 100%. Increasing this value will make pedestrians avoid unsafe crossings more frequently. Higher values will lead to more cautious behavior, reducing the likelihood of unsafe crossings."
-                },
-                // crosswalk cost
-                {
-                    m_Setting.GetOptionDescLocaleID(nameof(Setting.CrossingSlider)),
-                    "Default is 100%. Increasing this value will make pedestrians avoid crosswalks more frequently. Higher values will lead to more cautious behavior, reducing the likelihood of using crosswalks."
-                },
-                // spawn cost
-                {
-                    m_Setting.GetOptionDescLocaleID(nameof(Setting.SpawnSlider)),
-                    "Default is 100%. Increasing this value will make pedestrians avoid spawning more frequently. Higher values will lead to more cautious behavior, reducing the likelihood of spawning."
-                },
-                // walking cost
-                {
-                    m_Setting.GetOptionDescLocaleID(nameof(Setting.WalkingSlider)),
-                    "Default is 100%. Increasing this value will make pedestrians avoid walking more frequently. Higher values will lead to more cautious behavior, reducing the likelihood of walking."
-                },
-                
-                // Notes
-                {
-                    m_Setting.GetOptionDescLocaleID(nameof(Setting.Note)),
-                    "The game needs a restart to apply the changes."
-                },
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.Note)), "NOTE: The game needs a restart to apply the changes." },
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.ImportantNote)), "NOTE: These settings multiply the default values of all vehicles. The default value is 100%. Extreme values can cause unexpected behavior and no population growth. Larger cities are less affected. Use at your own risk." },
 
-                {
-                    m_Setting.GetOptionDescLocaleID(nameof(Setting.ImportantNote)),
-                    "These settings multiply the default values of all vehicles. The default value is 100%."
-                }
+                // Version and support
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.Version)), "Version" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.Author)), "Author" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.Support)), "If you have any questions or need help, visit the mod page on the workshop to leave a comment or report issues on our GitHub page. Log files are helpful for troubleshooting and can be found at `%appdata%/../LocalLow/Colossal Order/Cities Skylines/Logs`." },
+
+                // Descriptions 
                 
+                // Unsafe turning
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.UnsafeTurningSlider)), "Default is 100%. Increasing this value reduces the frequency of unsafe turns by vehicles, promoting more cautious driving." },
+                
+                // Unsafe U-turn
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.UnsafeUTurnSlider)), "Default is 100%. Increasing this value reduces the frequency of unsafe U-turns by vehicles, promoting more cautious behavior." },
+                
+                // Forbidden
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.ForbiddenSlider)), "Default is 100%. Increasing this value reduces the frequency of forbidden turns by vehicles, promoting more cautious behavior." },
+                
+                // Driving cost
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.DrivingSlider)), "Default is 100%. Increasing this value reduces the frequency of driving by vehicles, promoting more cautious behavior." },
+                
+                // Parking cost
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.ParkingSlider)), "Default is 100%. Increasing this value reduces the frequency of parking by vehicles, promoting more cautious behavior." },
+                
+                // Turning cost
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.TurningSlider)), "Default is 100%. Increasing this value reduces the frequency of turns by vehicles, promoting more cautious behavior." },
+                
+                // Lane changing cost
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.LaneCrossingSlider)), "Default is 100%. Increasing this value reduces the frequency of lane changes by vehicles, promoting more cautious behavior." },
+                
+                // Spawn cost
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.TraficSpawnSlider)), "Default is 100%. Increasing this value reduces the frequency of vehicle spawns, promoting more cautious behavior." },
+                
+                // Unsafe crossing
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.UnsafeCrossingSlider)), "Default is 100%. Increasing this value reduces the frequency of unsafe crossings by pedestrians, promoting more cautious behavior." },
+                
+                // Crosswalk cost
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.CrossingSlider)), "Default is 100%. Increasing this value reduces the frequency of crosswalk usage by pedestrians, promoting more cautious behavior." },
+                
+                // Pedestrian spawn cost
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.SpawnSlider)), "Default is 100%. Increasing this value reduces the frequency of pedestrian spawns, promoting more cautious behavior." },
+                
+                // Walking cost
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.WalkingSlider)), "Default is 100%. Increasing this value reduces the frequency of walking by pedestrians, promoting more cautious behavior." },
+                
+                // Version and support
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.Version)), "The current version of the mod." },
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.Author)), "The author of the mod." },
             };
         }
 
         public void Unload()
         {
         }
-        
-        
     }
 }
