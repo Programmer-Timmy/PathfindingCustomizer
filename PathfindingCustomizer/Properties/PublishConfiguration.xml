@@ -43,7 +43,7 @@ With **Pathfinding Customizer**, you can:
 <!--	<ChangeLog Value="-->
 	<ChangeLog>
 		
-- Added more options for adjusting pathfinding costs for pedestrians and vehicles. 
+- made the default jaywalking multiplier to 250% instead of game default 100%
 		
     </ChangeLog>
 	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon, buymeacoffee, kofi, crowdin, gitlab-->

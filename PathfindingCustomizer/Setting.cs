@@ -24,7 +24,7 @@ namespace PathfindingCustomizer
             if (UnsafeTurningSlider == 0) UnsafeTurningSlider = 100;
             if (UnsafeUTurnSlider == 0) UnsafeUTurnSlider = 100;
             if (ForbiddenSlider == 0) ForbiddenSlider = 100;
-            if (UnsafeCrossingSlider == 0) UnsafeCrossingSlider = 100;
+            if (UnsafeCrossingSlider == 0) UnsafeCrossingSlider = 250;
             if (CrossingSlider == 0) CrossingSlider = 100;
             if (SpawnSlider == 0) SpawnSlider = 100;
             if (WalkingSlider == 0) WalkingSlider = 100;
