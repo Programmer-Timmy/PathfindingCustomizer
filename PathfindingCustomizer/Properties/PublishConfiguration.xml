@@ -9,7 +9,7 @@
 	<!--LongDescription Value="This is a long description" /-->
 	<LongDescription># Pathfinding Customizer 
 		
-##IMPORTANT: If you experience an issue with no population growth, adjust the "Unsaved Crosswalk" setting (J-Walking) to 150% or lower to fix the issue until you have a bigger population.	
+## IMPORTANT: If you experience an issue with no population growth, adjust the "Unsaved Crosswalk" setting (J-Walking) to 150% or lower to fix the issue until you have a bigger population.	
 		
 **Pathfinding Customizer** is a powerful tool for tailoring your city's navigation system to better fit your desired gameplay experience. This mod allows you to adjust the probabilities of specific pathfinding actions by modifying their associated costs.
 
