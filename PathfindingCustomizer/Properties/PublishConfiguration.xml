@@ -36,7 +36,7 @@ With **Pathfinding Customizer**, you can:
 	<!--Link to the forum post where the mod can be discussed-->
 	<ForumLink Value="https://forum.paradoxplaza.com/forum/threads/pathfinding-customizer.1697643/" />
 	<!--Version of the mod-->
-	<ModVersion Value="1.0.5" />
+	<ModVersion Value="1.0.6" />
 	<!--Recommended version of the base game to use the mod-->
 	<GameVersion Value="1.1.*" />
 	<!--Dependency for the mod, can be set multiple times-->
@@ -45,13 +45,8 @@ With **Pathfinding Customizer**, you can:
 <!--	<ChangeLog Value="-->
 	<ChangeLog>
 		
-- **Fixed:** Wrong settings applied when loading a save game or starting the game.
-- **Updated:** Added info to clarify that a save game reload can also be used to apply new settings.
-- **Updated:** Lane changing info to help setting it up.
-- **Changed:** The step to 5 instead of 1 for all settings.
-- **Changed:** The slider for lane changing to max 1000 instead of 500,
-- **Added:** New setting to adjust the cost of lane changing even more.
-
+- **Fixed:** Wrong settings applied for "Lane Change".
+		
 	</ChangeLog>
 	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon, buymeacoffee, kofi, crowdin, gitlab-->
 	<ExternalLink Type="github" Url="https://github.com/Programmer-Timmy/PathfindingCustomizer" />

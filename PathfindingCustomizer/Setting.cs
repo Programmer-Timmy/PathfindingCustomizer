@@ -31,8 +31,10 @@ namespace PathfindingCustomizer
             DrivingSlider = DrivingSlider == 0 ? 100 : DrivingSlider;
             ParkingSlider = ParkingSlider == 0 ? 100 : ParkingSlider;
             TurningSlider = TurningSlider == 0 ? 100 : TurningSlider;
-            LaneCrossingSlider = LaneCrossingSlider == 0 ? 100 : LaneCrossingSlider;
+            LaneSwitchSlider = LaneSwitchSlider == 0 ? 100 : LaneSwitchSlider;
+            LaneSwitchSlider = LaneSwitchSlider > 500 ? 500 : LaneSwitchSlider;
             TraficSpawnSlider = TraficSpawnSlider == 0 ? 100 : TraficSpawnSlider;
+            
         }
 
         // Vehicle settings
@@ -77,12 +79,12 @@ namespace PathfindingCustomizer
         public int TurningSlider { get; set; }
         
         // Lane changing cost
-        [SettingsUISlider(min = 0, max = 1000, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 500, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kSection, kVehicleSettings)]
-        public int LaneCrossingSlider { get; set; }
+        public int LaneSwitchSlider { get; set; }
         
         [SettingsUISection(kSection, kVehicleSettings)]
-        public bool equalValuesLaneCrossing{ get; set; }
+        public bool EqualValuesLaneSwitch{ get; set; }
 
         
         // Traffic spawn cost
@@ -115,7 +117,7 @@ namespace PathfindingCustomizer
         
         // Version and support
         [SettingsUISection(kSection, kDetailsAndSupport)]
-        public string Version => "v1.0.4";
+        public string Version => "v1.0.6";
         
         // Author
         [SettingsUISection(kSection, kDetailsAndSupport)]
@@ -135,7 +137,7 @@ namespace PathfindingCustomizer
             DrivingSlider = 100;
             ParkingSlider = 100;
             TurningSlider = 100;
-            LaneCrossingSlider = 100;
+            LaneSwitchSlider = 100;
             TraficSpawnSlider = 100;
             
             // Pedestrian settings
@@ -189,8 +191,8 @@ namespace PathfindingCustomizer
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.TurningSlider)), "Turning Cost" },
                 
                 // Lane changing cost
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.LaneCrossingSlider)), "Lane Changing Cost" },
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.equalValuesLaneCrossing)), "Equal Values for Lane Changing" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.LaneSwitchSlider)), "Lane Changing Cost" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.EqualValuesLaneSwitch)), "Equal Values for Lane Changing" },
                 
                 // Spawn cost
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.TraficSpawnSlider)), "Spawn Cost" },
@@ -237,8 +239,8 @@ namespace PathfindingCustomizer
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.TurningSlider)), "Default is 100%. Increasing this value reduces the frequency of turns by vehicles, promoting more cautious behavior." },
                 
                 // Lane changing cost
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.LaneCrossingSlider)), "Default is 100%. Increasing this value reduces the frequency of lane changes by vehicles, promoting more cautious behavior. This setting can be used more extreme than the others. if you dont use the equal values for lane changing. I suggest to use a value between 200 and 500, But this can be different for each city." },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.equalValuesLaneCrossing)),"If enabled, all cost types will be equalized. Each cost set to 100% will be represented as 2. This is useful if you want a more aggressive reduction of lane changes. (Still experimental and may cause unexpected behavior. Use at your own risk.)"
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.LaneSwitchSlider)), "Default is 100%. Increasing this value reduces the frequency of lane changes by vehicles, promoting more cautious behavior. This setting can be used more extreme than the others. if you dont use the equal values for lane changing. I suggest to use a value between 200 and 500, But this can be different for each city." },
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.EqualValuesLaneSwitch)),"If enabled, all cost types will be equalized. Each cost set to 100% will be represented as 2. This is useful if you want a more aggressive reduction of lane changes. (Still experimental and may cause unexpected behavior. Use at your own risk.)"
                 },               
                 // Spawn cost
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.TraficSpawnSlider)), "Default is 100%. Increasing this value reduces the frequency of vehicle spawns, promoting more cautious behavior." },

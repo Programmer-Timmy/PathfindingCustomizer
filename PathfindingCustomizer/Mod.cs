@@ -5,6 +5,7 @@ using Game.SceneFlow;
 using Colossal.IO.AssetDatabase;
 using PathfindingCustomizer.PathfindSystems;
 using PathfindingCustomizer.PathfindSystems.PathfindCost;
+using Unity.Entities;
 
 namespace PathfindingCustomizer
 {

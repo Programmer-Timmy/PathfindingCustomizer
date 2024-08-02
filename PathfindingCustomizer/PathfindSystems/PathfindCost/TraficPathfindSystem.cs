@@ -60,27 +60,6 @@ namespace PathfindingCustomizer.PathfindSystems.PathfindCost
                 AdjustCost(data.m_SpawnCost.m_Value[2], settings.SpawnSlider),
                 AdjustCost(data.m_SpawnCost.m_Value[3], settings.SpawnSlider)
             );
-            
-            Logger.Info($"applying lane crossing cost");
-            if (settings.equalValuesLaneCrossing)
-            {
-                data.m_LaneCrossCost = new PathfindCosts(
-                    AdjustCost(2, settings.LaneCrossingSlider),
-                    AdjustCost(2, settings.LaneCrossingSlider),
-                    AdjustCost(2, settings.LaneCrossingSlider),
-                    AdjustCost(2, settings.LaneCrossingSlider)
-                );
-            }
-            else
-            {
-                data.m_LaneCrossCost = new PathfindCosts(
-                    AdjustCost(data.m_LaneCrossCost.m_Value[0], settings.LaneCrossingSlider),
-                    AdjustCost(data.m_LaneCrossCost.m_Value[1], settings.LaneCrossingSlider),
-                    AdjustCost(data.m_LaneCrossCost.m_Value[2], settings.LaneCrossingSlider),
-                    AdjustCost(data.m_LaneCrossCost.m_Value[3], settings.LaneCrossingSlider)
-                );
-                Logger.Info($"lane crossing cost applied");
-            }
 
             return data;
         }
