@@ -36,7 +36,7 @@
     - **User Interface:** Introduced an intuitive interface for easy adjustments.
 
 ## Upcomming
-- addding a advanced mod that allows you to make specific changes to the cots
+- addding a advanced modw that allows you to make specific changes to the cots
 - Looking into how the pathfinding works to create features like yielding for emergency vehicles
 
 ## Contributing
