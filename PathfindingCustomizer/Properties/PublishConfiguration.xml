@@ -45,9 +45,14 @@ With **Pathfinding Customizer**, you can:
 <!--	<ChangeLog Value="-->
 	<ChangeLog>
 		
-- **Improved:** Info in the mod settings panel. Now there is more information about the mod and how to use it.
-		
-    </ChangeLog>
+- **Fixed:** Wrong settings applied when loading a save game or starting the game.
+- **Updated:** Added info to clarify that a save game reload can also be used to apply new settings.
+- **Updated:** Lane changing info to help setting it up.
+- **Changed:** The step to 5 instead of 1 for all settings.
+- **Changed:** The slider for lane changing to max 1000 instead of 500,
+- **Added:** New setting to adjust the cost of lane changing even more.
+
+	</ChangeLog>
 	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon, buymeacoffee, kofi, crowdin, gitlab-->
 	<ExternalLink Type="github" Url="https://github.com/Programmer-Timmy/PathfindingCustomizer" />
 </Publish>

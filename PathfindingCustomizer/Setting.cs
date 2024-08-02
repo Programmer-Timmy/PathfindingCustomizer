@@ -47,42 +47,46 @@ namespace PathfindingCustomizer
         public string Note => string.Empty;
 
         // Unsafe turning
-        [SettingsUISlider(min = 0, max = 500, step = 1, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 500, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kSection, kVehicleSettings)]
         public int UnsafeTurningSlider { get; set; }
         
         // Unsafe U-turn
-        [SettingsUISlider(min = 0, max = 500, step = 1, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 500, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kSection, kVehicleSettings)]
         public int UnsafeUTurnSlider { get; set; }
         
         // Forbidden
-        [SettingsUISlider(min = 0, max = 500, step = 1, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 500, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kSection, kVehicleSettings)]
         public int ForbiddenSlider { get; set; }
         
         // Driving cost
-        [SettingsUISlider(min = 0, max = 500, step = 1, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 500, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kSection, kVehicleSettings)]
         public int DrivingSlider { get; set; }
         
         // Parking cost
-        [SettingsUISlider(min = 0, max = 500, step = 1, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 500, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kSection, kVehicleSettings)]
         public int ParkingSlider { get; set; }
         
         // Turning cost
-        [SettingsUISlider(min = 0, max = 500, step = 1, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 500, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kSection, kVehicleSettings)]
         public int TurningSlider { get; set; }
         
         // Lane changing cost
-        [SettingsUISlider(min = 0, max = 500, step = 1, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 1000, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kSection, kVehicleSettings)]
         public int LaneCrossingSlider { get; set; }
         
+        [SettingsUISection(kSection, kVehicleSettings)]
+        public bool equalValuesLaneCrossing{ get; set; }
+
+        
         // Traffic spawn cost
-        [SettingsUISlider(min = 0, max = 500, step = 1, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 500, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kSection, kVehicleSettings)]
         public int TraficSpawnSlider { get; set; }
         
@@ -90,22 +94,22 @@ namespace PathfindingCustomizer
         [SettingsUISection(kSection, kPedestrianSettings)]
         
         // Unsafe crossing
-        [SettingsUISlider(min = 0, max = 500, step = 1, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 500, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kSection, kPedestrianSettings)]
         public int UnsafeCrossingSlider { get; set; } 
         
         // Crosswalk cost
-        [SettingsUISlider(min = 0, max = 500, step = 1, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 500, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kSection, kPedestrianSettings)]
         public int CrossingSlider { get; set; }
         
         // Pedestrian spawn cost
-        [SettingsUISlider(min = 0, max = 500, step = 1, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 500, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kSection, kPedestrianSettings)]
         public int SpawnSlider { get; set; }
         
         // Walking cost
-        [SettingsUISlider(min = 0, max = 500, step = 1, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 500, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kSection, kPedestrianSettings)]
         public int WalkingSlider { get; set; }
         
@@ -186,6 +190,7 @@ namespace PathfindingCustomizer
                 
                 // Lane changing cost
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.LaneCrossingSlider)), "Lane Changing Cost" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.equalValuesLaneCrossing)), "Equal Values for Lane Changing" },
                 
                 // Spawn cost
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.TraficSpawnSlider)), "Spawn Cost" },
@@ -203,7 +208,7 @@ namespace PathfindingCustomizer
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.WalkingSlider)), "Walking Cost" },
                 
                 // Notes
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.Note)), "NOTE: The game needs a restart to apply the changes." },
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.Note)), "NOTE: The game needs a restart or sa ve game reload to apply the changes." },
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.ImportantNote)), "NOTE: These settings multiply the default values of all vehicles. The default value is 100%. Extreme values can cause unexpected behavior and no population growth. Larger cities are less affected. Use at your own risk." },
 
                 // Version and support
@@ -232,8 +237,9 @@ namespace PathfindingCustomizer
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.TurningSlider)), "Default is 100%. Increasing this value reduces the frequency of turns by vehicles, promoting more cautious behavior." },
                 
                 // Lane changing cost
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.LaneCrossingSlider)), "Default is 100%. Increasing this value reduces the frequency of lane changes by vehicles, promoting more cautious behavior." },
-                
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.LaneCrossingSlider)), "Default is 100%. Increasing this value reduces the frequency of lane changes by vehicles, promoting more cautious behavior. This setting can be used more extreme than the others. if you dont use the equal values for lane changing. I suggest to use a value between 200 and 500, But this can be different for each city." },
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.equalValuesLaneCrossing)),"If enabled, all cost types will be equalized. Each cost set to 100% will be represented as 2. This is useful if you want a more aggressive reduction of lane changes. (Still experimental and may cause unexpected behavior. Use at your own risk.)"
+                },               
                 // Spawn cost
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.TraficSpawnSlider)), "Default is 100%. Increasing this value reduces the frequency of vehicle spawns, promoting more cautious behavior." },
                 

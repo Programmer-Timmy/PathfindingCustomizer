@@ -13,24 +13,24 @@ namespace PathfindingCustomizer.PathfindSystems.PathfindCost
     
     public partial class PathFindSystemBase<T> : GameSystemBase where T : unmanaged, IComponentData // Yess it is unmanaged... I know what I'm doing :) Unity is just annoying
 {
-    private readonly ILog _logger = LogManager.GetLogger($"{nameof(PathfindingCustomizer)}.{nameof(PathFindSystemBase<T>)}");
+    public readonly ILog Logger = LogManager.GetLogger($"{nameof(PathfindingCustomizer)}.{nameof(PathFindSystemBase<T>)}");
     
     protected override void OnUpdate()
     {
-        _logger.Info(nameof(OnUpdate));
+        Logger.Info(nameof(OnUpdate));
         ApplyPathfindingSettings();
     }
 
     protected override void OnGameLoadingComplete(Purpose purpose, GameMode mode)
     {
         base.OnGameLoadingComplete(purpose, mode);
-        _logger.Info(nameof(OnGameLoadingComplete));
+        Logger.Info(nameof(OnGameLoadingComplete));
         ApplyPathfindingSettings();
     }
 
     private void ApplyPathfindingSettings()
     {
-        _logger.Info($"Applying pathfinding settings for {typeof(T).Name}");
+        Logger.Info($"Applying pathfinding settings for {typeof(T).Name}");
         try
         {
             NativeArray<Entity> entities = EntityManager.CreateEntityQuery(ComponentType.ReadWrite<T>())
@@ -47,12 +47,12 @@ namespace PathfindingCustomizer.PathfindSystems.PathfindCost
             }
 
             entities.Dispose();
-            _logger.Info($"Pathfinding settings have been applied for {typeof(T).Name}");
+            Logger.Info($"Pathfinding settings have been applied for {typeof(T).Name}");
 
         }
         catch (Exception e)
         {
-            _logger.Error($"An error occurred while applying pathfinding settings for {typeof(T).Name}: {e}");
+            Logger.Error($"An error occurred while applying pathfinding settings for {typeof(T).Name}: {e}");
             throw;
         }
     }
@@ -67,6 +67,7 @@ namespace PathfindingCustomizer.PathfindSystems.PathfindCost
 
     protected float AdjustCost(float value, int slider)
     {
+        Logger.Info($"Adjusting cost: {value} -> {value * slider / 100}");
         return value == 0 ? 0 : value * slider / 100;
     }
 }

@@ -20,17 +20,17 @@ namespace PathfindingCustomizer.PathfindSystems.PathfindCost
             );
             
             data.m_UnsafeUTurnCost = new PathfindCosts(
-                AdjustCost(data.m_UnsafeUTurnCost.m_Value[0], settings.UnsafeTurningSlider),
-                AdjustCost(data.m_UnsafeUTurnCost.m_Value[1], settings.UnsafeTurningSlider),
-                AdjustCost(data.m_UnsafeUTurnCost.m_Value[2], settings.UnsafeTurningSlider),
-                AdjustCost(data.m_UnsafeUTurnCost.m_Value[3], settings.UnsafeTurningSlider)
+                AdjustCost(data.m_UnsafeUTurnCost.m_Value[0], settings.UnsafeUTurnSlider),
+                AdjustCost(data.m_UnsafeUTurnCost.m_Value[1], settings.UnsafeUTurnSlider),
+                AdjustCost(data.m_UnsafeUTurnCost.m_Value[2], settings.UnsafeUTurnSlider),
+                AdjustCost(data.m_UnsafeUTurnCost.m_Value[3], settings.UnsafeUTurnSlider)
             );
             
             data.m_ForbiddenCost = new PathfindCosts(
-                AdjustCost(data.m_ForbiddenCost.m_Value[0], settings.UnsafeTurningSlider),
-                AdjustCost(data.m_ForbiddenCost.m_Value[1], settings.UnsafeTurningSlider),
-                AdjustCost(data.m_ForbiddenCost.m_Value[2], settings.UnsafeTurningSlider),
-                AdjustCost(data.m_ForbiddenCost.m_Value[3], settings.UnsafeTurningSlider)
+                AdjustCost(data.m_ForbiddenCost.m_Value[0], settings.ForbiddenSlider),
+                AdjustCost(data.m_ForbiddenCost.m_Value[1], settings.ForbiddenSlider),
+                AdjustCost(data.m_ForbiddenCost.m_Value[2], settings.ForbiddenSlider),
+                AdjustCost(data.m_ForbiddenCost.m_Value[3], settings.ForbiddenSlider)
             );
             
             data.m_DrivingCost = new PathfindCosts(
@@ -61,20 +61,27 @@ namespace PathfindingCustomizer.PathfindSystems.PathfindCost
                 AdjustCost(data.m_SpawnCost.m_Value[3], settings.SpawnSlider)
             );
             
-            data.m_LaneCrossCost = new PathfindCosts(
-                AdjustCost(data.m_LaneCrossCost.m_Value[0], settings.LaneCrossingSlider),
-                AdjustCost(data.m_LaneCrossCost.m_Value[1], settings.LaneCrossingSlider),
-                AdjustCost(data.m_LaneCrossCost.m_Value[2], settings.LaneCrossingSlider),
-                AdjustCost(data.m_LaneCrossCost.m_Value[3], settings.LaneCrossingSlider)
-            );
-            
-            data.m_SpawnCost = new PathfindCosts(
-                AdjustCost(data.m_SpawnCost.m_Value[0], settings.TraficSpawnSlider),
-                AdjustCost(data.m_SpawnCost.m_Value[1], settings.TraficSpawnSlider),
-                AdjustCost(data.m_SpawnCost.m_Value[2], settings.TraficSpawnSlider),
-                AdjustCost(data.m_SpawnCost.m_Value[3], settings.TraficSpawnSlider)
-            );
-            
+            Logger.Info($"applying lane crossing cost");
+            if (settings.equalValuesLaneCrossing)
+            {
+                data.m_LaneCrossCost = new PathfindCosts(
+                    AdjustCost(2, settings.LaneCrossingSlider),
+                    AdjustCost(2, settings.LaneCrossingSlider),
+                    AdjustCost(2, settings.LaneCrossingSlider),
+                    AdjustCost(2, settings.LaneCrossingSlider)
+                );
+            }
+            else
+            {
+                data.m_LaneCrossCost = new PathfindCosts(
+                    AdjustCost(data.m_LaneCrossCost.m_Value[0], settings.LaneCrossingSlider),
+                    AdjustCost(data.m_LaneCrossCost.m_Value[1], settings.LaneCrossingSlider),
+                    AdjustCost(data.m_LaneCrossCost.m_Value[2], settings.LaneCrossingSlider),
+                    AdjustCost(data.m_LaneCrossCost.m_Value[3], settings.LaneCrossingSlider)
+                );
+                Logger.Info($"lane crossing cost applied");
+            }
+
             return data;
         }
     }
