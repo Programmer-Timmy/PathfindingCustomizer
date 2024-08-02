@@ -10,6 +10,14 @@
 - **User-Friendly Interface:** Easy-to-use controls for adjusting pathfinding costs and settings.
 
 ## Changelog
+- **Version 1.0.5 - [2-8-2024]**
+    - Fixed: Wrong settings applied when loading a save game or starting the game.
+    - Updated: Added info to clarify that a save game reload can also be used to apply new settings.
+    - Updated: Lane changing info to help setting it up.
+    - Changed: The step to 5 instead of 1 for all settings.
+    - Changed: The slider for lane changing to max 1000 instead of 500,
+    - Added: New setting to adjust the cost of lane changing even more.
+
 - **Version 1.0.4 - [1-8-2024]**
     - **fixed** No pop growth. If you have this issue set unsafe crossing to 150 or lower
 
@@ -28,7 +36,7 @@
     - **User Interface:** Introduced an intuitive interface for easy adjustments.
 
 ## Upcomming
-- addding a advanced mod that allows you to make specific changes to the cots
+- addding a advanced modw that allows you to make specific changes to the cots
 - Looking into how the pathfinding works to create features like yielding for emergency vehicles
 
 ## Contributing
