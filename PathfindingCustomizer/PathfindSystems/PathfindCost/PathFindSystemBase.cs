@@ -67,7 +67,6 @@ namespace PathfindingCustomizer.PathfindSystems.PathfindCost
 
     protected float AdjustCost(float value, int slider)
     {
-        Logger.Info($"Adjusting cost: {value} -> {value * slider / 100}");
         return value == 0 ? 0 : value * slider / 100;
     }
 }

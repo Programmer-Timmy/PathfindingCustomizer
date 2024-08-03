@@ -45,7 +45,10 @@ With **Pathfinding Customizer**, you can:
 <!--	<ChangeLog Value="-->
 	<ChangeLog>
 		
-- **Fixed:** Wrong settings applied for "Lane Change".
+- **Changed:** Changed default values for "Unsaved Crosswalk" to 100% (feedback from players)
+- **Removed:** equal cost setting for "lane change" (Won't be needed because of the upcoming advanced mode)
+- **Improved:** Explanation of how to use the mod in the description and notes
+- **Added:** Advanced tab for upcoming features
 		
 	</ChangeLog>
 	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon, buymeacoffee, kofi, crowdin, gitlab-->
