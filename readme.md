@@ -10,6 +10,12 @@
 - **User-Friendly Interface:** Easy-to-use controls for adjusting pathfinding costs and settings.
 
 ## Changelog
+- **Version 1.0.7 - [3-8-2024]**
+  - **Changed:** Changed default values for "Unsaved Crosswalk" to 100% (feedback from players)
+  - **Removed:** equal cost setting for "lane change" (Won't be needed because of the upcoming advanced mode)
+  - **Improved:** Explanation of how to use the mod in the description and notes
+  - **Added:** Advanced tab for upcoming features
+
 - **Version 1.0.6 - [2-8-2024]**
     - Fixed: Wrong settings for "Lane Change".
  
