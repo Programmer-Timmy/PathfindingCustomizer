@@ -10,6 +10,9 @@
 - **User-Friendly Interface:** Easy-to-use controls for adjusting pathfinding costs and settings.
 
 ## Changelog
+- **Version 1.0.6 - [2-8-2024]**
+    - Fixed: Wrong settings for "Lane Change".
+ 
 - **Version 1.0.5 - [2-8-2024]**
     - Fixed: Wrong settings applied when loading a save game or starting the game.
     - Updated: Added info to clarify that a save game reload can also be used to apply new settings.
