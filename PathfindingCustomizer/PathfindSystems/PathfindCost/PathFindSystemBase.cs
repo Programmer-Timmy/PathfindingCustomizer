@@ -17,8 +17,7 @@ namespace PathfindingCustomizer.PathfindSystems.PathfindCost
     
     protected override void OnUpdate()
     {
-        Logger.Info(nameof(OnUpdate));
-        ApplyPathfindingSettings();
+        // Do nothing
     }
 
     protected override void OnGameLoadingComplete(Purpose purpose, GameMode mode)
@@ -47,8 +46,6 @@ namespace PathfindingCustomizer.PathfindSystems.PathfindCost
             }
 
             entities.Dispose();
-            Logger.Info($"Pathfinding settings have been applied for {typeof(T).Name}");
-
         }
         catch (Exception e)
         {

@@ -36,7 +36,7 @@ With **Pathfinding Customizer**, you can:
 	<!--Link to the forum post where the mod can be discussed-->
 	<ForumLink Value="https://forum.paradoxplaza.com/forum/threads/pathfinding-customizer.1697643/" />
 	<!--Version of the mod-->
-	<ModVersion Value="1.0.6" />
+	<ModVersion Value="1.0.8" />
 	<!--Recommended version of the base game to use the mod-->
 	<GameVersion Value="1.1.*" />
 	<!--Dependency for the mod, can be set multiple times-->
@@ -45,10 +45,8 @@ With **Pathfinding Customizer**, you can:
 <!--	<ChangeLog Value="-->
 	<ChangeLog>
 		
-- **Changed:** Changed default values for "Unsaved Crosswalk" to 100% (feedback from players)
-- **Removed:** equal cost setting for "lane change" (Won't be needed because of the upcoming advanced mode)
-- **Improved:** Explanation of how to use the mod in the description and notes
-- **Added:** Advanced tab for upcoming features
+- **Fixed:** Players experiencing a crash to desktop. This was due to the mod trying to update the cost when it is not possible.
+- **Improved:** Added better error handling.
 		
 	</ChangeLog>
 	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon, buymeacoffee, kofi, crowdin, gitlab-->

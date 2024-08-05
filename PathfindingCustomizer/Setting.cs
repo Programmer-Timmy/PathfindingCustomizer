@@ -100,7 +100,7 @@ namespace PathfindingCustomizer
         public int WalkingSlider { get; set; }
 
         [SettingsUISection(kBasicSettings, kDetailsAndSupport)]
-        public string Version => "v1.0.7";
+        public string Version => "v1.0.8";
 
         [SettingsUISection(kBasicSettings, kDetailsAndSupport)]
         public string Author => "Programmer Timmy (Cosmic Pioneer)";
