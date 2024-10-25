@@ -36,7 +36,7 @@ With **Pathfinding Customizer**, you can:
 	<!--Link to the forum post where the mod can be discussed-->
 	<ForumLink Value="https://forum.paradoxplaza.com/forum/threads/pathfinding-customizer.1697643/" />
 	<!--Version of the mod-->
-	<ModVersion Value="1.0.8" />
+	<ModVersion Value="1.0.9" />
 	<!--Recommended version of the base game to use the mod-->
 	<GameVersion Value="1.1.*" />
 	<!--Dependency for the mod, can be set multiple times-->
@@ -45,8 +45,7 @@ With **Pathfinding Customizer**, you can:
 <!--	<ChangeLog Value="-->
 	<ChangeLog>
 		
-- **Fixed:** Players experiencing a crash to desktop. This was due to the mod trying to update the cost when it is not possible.
-- **Improved:** Added better error handling.
+- **updated** The max procentage to 1000% for all settings to allow more flexibility for larger cities. (Note: This may cause issues with population growth, lower the settings if you experience this issue)
 		
 	</ChangeLog>
 	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon, buymeacoffee, kofi, crowdin, gitlab-->

@@ -10,61 +10,64 @@ using Unity.Entities;
 
 namespace PathfindingCustomizer.PathfindSystems.PathfindCost
 {
-    
-    public partial class PathFindSystemBase<T> : GameSystemBase where T : unmanaged, IComponentData // Yess it is unmanaged... I know what I'm doing :) Unity is just annoying
-{
-    public readonly ILog Logger = LogManager.GetLogger($"{nameof(PathfindingCustomizer)}.{nameof(PathFindSystemBase<T>)}");
-    
-    protected override void OnUpdate()
+    public partial class PathFindSystemBase<T> : GameSystemBase
+        where T : unmanaged, IComponentData // Yess it is unmanaged... I know what I'm doing :) Unity is just annoying
     {
-        // Do nothing
-    }
+        public readonly ILog Logger =
+            LogManager.GetLogger($"{nameof(PathfindingCustomizer)}.{nameof(PathFindSystemBase<T>)}");
 
-    protected override void OnGameLoadingComplete(Purpose purpose, GameMode mode)
-    {
-        base.OnGameLoadingComplete(purpose, mode);
-        Logger.Info(nameof(OnGameLoadingComplete));
-        ApplyPathfindingSettings();
-    }
-
-    private void ApplyPathfindingSettings()
-    {
-        Logger.Info($"Applying pathfinding settings for {typeof(T).Name}");
-        try
+        protected override void OnUpdate()
         {
-            NativeArray<Entity> entities = EntityManager.CreateEntityQuery(ComponentType.ReadWrite<T>())
-                .ToEntityArray(Unity.Collections.Allocator.Persistent);
+            // Do nothing
+        }
 
-            var settings = Mod.M_Setting;
+        protected override void OnGameLoadingComplete(Purpose purpose, GameMode mode)
+        {
+            base.OnGameLoadingComplete(purpose, mode);
+            Logger.Info(nameof(OnGameLoadingComplete));
+            ApplyPathfindingSettings();
+        }
 
-            foreach (var entity in entities)
+        private void ApplyPathfindingSettings()
+        {
+            Logger.Info($"Applying pathfinding settings for {typeof(T).Name}");
+            try
             {
-                T oldData = EntityManager.GetComponentData<T>(entity);
-                T newData = AdjustPathfindingData(oldData, settings);
-                
-                EntityManager.SetComponentData(entity, newData);
+                NativeArray<Entity> entities = EntityManager.CreateEntityQuery(ComponentType.ReadWrite<T>())
+                    .ToEntityArray(Unity.Collections.Allocator.Persistent);
+
+                var settings = Mod.M_Setting;
+
+                foreach (var entity in entities)
+                {
+                    Logger.Info($"Adjusting pathfinding data for {entity}");
+
+                    T oldData = EntityManager.GetComponentData<T>(entity);
+                    T newData = AdjustPathfindingData(oldData, settings);
+
+                    EntityManager.SetComponentData(entity, newData);
+                }
+
+                entities.Dispose();
             }
-
-            entities.Dispose();
+            catch (Exception e)
+            {
+                Logger.Error($"An error occurred while applying pathfinding settings for {typeof(T).Name}: {e}");
+                throw;
+            }
         }
-        catch (Exception e)
+
+        protected virtual T AdjustPathfindingData(T data, Setting settings)
         {
-            Logger.Error($"An error occurred while applying pathfinding settings for {typeof(T).Name}: {e}");
-            throw;
+            // Implement specific adjustments for your component data
+            // This example assumes T has similar properties as PathfindPedestrianData
+            // Adjust according to your actual component data
+            return data;
+        }
+
+        protected float AdjustCost(float value, int slider)
+        {
+            return value == 0 ? 0 : value * slider / 100;
         }
     }
-
-    protected virtual T AdjustPathfindingData(T data, Setting settings)
-    {
-        // Implement specific adjustments for your component data
-        // This example assumes T has similar properties as PathfindPedestrianData
-        // Adjust according to your actual component data
-        return data;
-    }
-
-    protected float AdjustCost(float value, int slider)
-    {
-        return value == 0 ? 0 : value * slider / 100;
-    }
-}
 }

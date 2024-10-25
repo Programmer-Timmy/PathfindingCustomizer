@@ -51,56 +51,56 @@ namespace PathfindingCustomizer
         public string Note => string.Empty;
 
         // Settings
-        [SettingsUISlider(min = 0, max = 500, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 1000, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kBasicSettings, kVehicleSettings)]
         public int UnsafeTurningSlider { get; set; }
 
-        [SettingsUISlider(min = 0, max = 500, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 1000, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kBasicSettings, kVehicleSettings)]
         public int UnsafeUTurnSlider { get; set; }
 
-        [SettingsUISlider(min = 0, max = 500, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 1000, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kBasicSettings, kVehicleSettings)]
         public int ForbiddenSlider { get; set; }
 
-        [SettingsUISlider(min = 0, max = 500, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 1000, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kBasicSettings, kVehicleSettings)]
         public int DrivingSlider { get; set; }
 
-        [SettingsUISlider(min = 0, max = 500, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 1000, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kBasicSettings, kVehicleSettings)]
         public int ParkingSlider { get; set; }
 
-        [SettingsUISlider(min = 0, max = 500, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 1000, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kBasicSettings, kVehicleSettings)]
         public int TurningSlider { get; set; }
 
-        [SettingsUISlider(min = 0, max = 500, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 1000, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kBasicSettings, kVehicleSettings)]
         public int LaneSwitchSlider { get; set; }
 
-        [SettingsUISlider(min = 0, max = 500, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 1000, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         [SettingsUISection(kBasicSettings, kVehicleSettings)]
         public int TraficSpawnSlider { get; set; }
 
         [SettingsUISection(kBasicSettings, kPedestrianSettings)]
-        [SettingsUISlider(min = 0, max = 500, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 1000, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         public int UnsafeCrossingSlider { get; set; } 
 
         [SettingsUISection(kBasicSettings, kPedestrianSettings)]
-        [SettingsUISlider(min = 0, max = 500, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 1000, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         public int CrossingSlider { get; set; }
 
         [SettingsUISection(kBasicSettings, kPedestrianSettings)]
-        [SettingsUISlider(min = 0, max = 500, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 1000, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         public int SpawnSlider { get; set; }
 
         [SettingsUISection(kBasicSettings, kPedestrianSettings)]
-        [SettingsUISlider(min = 0, max = 500, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
+        [SettingsUISlider(min = 0, max = 1000, step = 5, scalarMultiplier = 1, unit = Unit.kPercentage)]
         public int WalkingSlider { get; set; }
 
         [SettingsUISection(kBasicSettings, kDetailsAndSupport)]
-        public string Version => "v1.0.8";
+        public string Version => "v1.0.9";
 
         [SettingsUISection(kBasicSettings, kDetailsAndSupport)]
         public string Author => "Programmer Timmy (Cosmic Pioneer)";
@@ -111,7 +111,7 @@ namespace PathfindingCustomizer
 
         // Advanced Settings
         [SettingsUISection(kAdvancedSettings, kAdvancedSettingsTemp)]
-        public string ComingSoon => "COMING SOON: Advanced settings documentation and options are being developed. Stay tuned for updates.";
+        public string ComingSoon => "COMING SOON: Advanced settings documentation and options are being developed. Stay tuned for updates. UPDATE: I dont have a lot of time to work on this mod anymore. If you want to contribute, go the the GitHub page and submit a pull request. I will review it and merge it if it is good. Thank you for your support.";
 
         public override void SetDefaults()
         {
